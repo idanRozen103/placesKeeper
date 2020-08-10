@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/map.css">
+
+</head>
+
+<body onload="setPefs()" onload="initMap()">
+    <header>MAP</header>
+    <section class="map-container">
+        <div id="map"></div>
+    </section>
+
+    <div class="location-list">
+        <header>My Places
+            <div class="target-btn" title="Click to see your current location">
+                <img src="./img/target.jpg" onclick="onGetPos()">
+            </div>
+        </header>
+        <p id="locationError"></p>
+        <div class="input-modal" hidden>
+            <button onclick="onCloseModal()">X</button>
+            <input type="text" class="place-input" placeholder="What is this place?" onkeyup="enableSaveBtn()">
+            <button class="save-place-btn" onclick="onSaveLocation()" disabled>Save</button>
+            <!-- <select>
+                <option disabled selected value="">"which type this place?"</option>
+                <option value="home">Home</option>
+                <option value="work">work</option>
+                <option value="parking">parking</option>
+                <option value="school">school</option>
+                <option value="other">other</option>
+            </select> -->
+
+        </div class="list-container">
+        <ul class="saved-list flex column">
+
+        </ul>
+
+
+    </div>
+    <a class="back-btn" href="./index.html">Back to Home Page</a>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlWbqo74OV16VlAGEcEZzcXpb5DKtGgQY&callback=initMap&libraries=&v=weekly"
+        defer></script>
+    <!-- <script src="./app.js"></script> -->
+    <script src="js/utilService.js"></script>
+    <script src="js/storageService.js"></script>
+    <script src="js/placeService.js"></script>
+    <script src="js/placeController.js"></script>
+</body>
+
+</html>

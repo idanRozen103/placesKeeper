@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/user-prefs.css">
+</head>
+
+<body onload="setPrefs()">
+
+
+    <div class="container">
+        <header>Let us know you better</header>
+        <form onsubmit="onSavePrefs(event)">
+            <div>
+                <label for="color">Background color:</label>
+                <input type="color" id="color" name="color" value="#F5C2F2" placeholder="choose background color" onblur="onSaveColor()">
+            </div>
+            <div>
+                <label for="text-color">Text color:</label>
+                <input type="color" id="text-color" name="text-color" value="#F5C2F2" placeholder="choose text color"
+                    onblur="onSaveColor()">
+            </div>
+            <div>
+                <label for="birth-date">Date of Birth:</label>
+                <input type="datetime-local" id="birth-date-time" name="birth-date-time"
+                    placeholder="Enter your date of birth">
+            </div>
+            <div>
+                <label for="email-adress">Email:</label>
+                <input type="email" id="email-adress" name="email-adress" placeholder="Enter your Email adress"
+                    required>
+            </div>
+            <div>
+                <label for="age" onblur="checkAge()">Age:</label>
+                <input type="range min=" 18" max="120" id="age" name="age" placeholder="Enter your age">
+            </div>
+
+            <button> Save My Preferences</button>
+        </form>
+        <p>These prefferences will be saved BUT you can change them anytime you want to</p>
+
+    </div>
+    <a href="./index.html">Back to Home Page</a>
+
+
+
+    <script src="js/utilService.js"></script>
+    <script src="js/storageService.js"></script>
+    <script src="js/userPrefService.js"></script>
+    <script src="js/userPrefsController.js"></script>
+</body>
+
+</html>
